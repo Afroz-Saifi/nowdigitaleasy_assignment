@@ -63,4 +63,17 @@ const deleteUser = async (req, res, next) => {
     }
 }
 
-module.exports = { addNewUser, getAllUsers, getUser, deleteUser };
+// update a user details by its id
+const updateUser = async (req, res, next) => {
+    try {
+        await User.findByIdAndUpdate(req.params.id, req.body)
+        return res.status(202).json({
+            success: true,
+            message: "user details are updated successfully"
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
+module.exports = { addNewUser, getAllUsers, getUser, deleteUser, updateUser };
