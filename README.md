@@ -1,6 +1,6 @@
 # nowdigitaleasy_assignment
 
-## Live link : <a> </a>
+## Live link : <a>https://famous-beanie-boa.cyclic.app/</a>
 
 ## Routes
 /users/add : It is a POST route to add a new user
