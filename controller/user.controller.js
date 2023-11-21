@@ -32,4 +32,21 @@ const getAllUsers = async (req, res, next) => {
     }
 }
 
-module.exports = { addNewUser, getAllUsers };
+// get user by the id
+const getUser = async (req, res, next) => {
+    try {
+        const user = await User.findById(req.params.id)
+        if(user){
+            return res.status(200).json({
+                success: true,
+                user
+            })
+        }
+        const error = new Error("user not found with the id")
+        return next(error)
+    } catch (error) {
+        next(error)
+    }
+}
+
+module.exports = { addNewUser, getAllUsers, getUser };
