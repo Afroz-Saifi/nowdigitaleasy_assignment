@@ -9,7 +9,7 @@ app.use(express.json())
 
 
 app.get("/", (req, res) => {
-    res.send("working here find.")
+    res.send("nowdigital assignment.")
 })
 
 app.use("/user", user_router)
